@@ -44,7 +44,9 @@ services:
 
   nginx:
     container_name: ts-nginx
-    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html
